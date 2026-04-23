@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Community</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">Tech Community</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./form.html">Daftar Anggota</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Multimedia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3 text-center border">
+            <h1 class="display-4 fw-bold text-primary">Tech Community</h1>
+            <p class="col-md-8 mx-auto fs-5 text-secondary">
+                Komunitas peminat teknologi untuk saling belajar, berkolaborasi, dan membangun inovasi kreatif di era digital
+            </p>
+            <a href="./form.html" class="btn btn-primary btn-lg mt-3">Gabung Sekarang!</a>
+        </div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <h3 class="mb-4 border-bottom pb-2">Daftar Anggota Saat Ini</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" width="5%">No</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Bidang</th>
+                            </tr>
+                        </thead>
+                        <tbody id="memberTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const membersData = [
+            { nama: "Zain", email: "zain@example.com", bidang: "Web Development" }
+        ];
+
+        const tableBody = document.getElementById('memberTableBody');
+
+        function renderTable() {
+            let tableHTML = "";
+            membersData.forEach((member, index) => {
+                tableHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${member.nama}</td>
+                        <td>${member.email}</td>
+                        <td><span class="badge bg-secondary">${member.bidang}</span></td>
+                    </tr>
+                `;
+            });
+            tableBody.innerHTML = tableHTML;
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>
